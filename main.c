@@ -6,23 +6,31 @@
 /*   By: mecetink <mecetink@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 14:00:41 by mecetink          #+#    #+#             */
-/*   Updated: 2025/05/30 15:14:37 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/05/30 18:22:17 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void test_strchr()
+/* int main()
 {
-	
-}
+	char src[] = "ABCDEFGHI";
+	char dest[] = "12345678";
+	memmove(src, src + 3, 5);
+	printf("%s\n", dest);
+	ft_memmove(src, src + 3, 5);
+	printf("%s\n", dest);
+	char a[] = {'h', 'e', 'l', 'l', 'o'};
+	char b[] = {'h', 'e', 'l', 'l', 'o'};
+	char c[] = {'h', 'e', 'l', 'l', 'x'};
+	char d[] = {'h', 'e', 'l', '\0', '\0'};
 
-int main()
-{
-	char s[] = "hello world";
-	printf("%s", ft_strrchr(s, 'o'));
-	printf("%s", strrchr(s, 'o'));
-}
+	printf("%d == %d\n", memcmp(a, b, 5), ft_memcmp(a, b, 5)); // 0
+	printf("%d == %d\n", memcmp(a, c, 5), ft_memcmp(a, c, 5)); // < 0
+	printf("%d == %d\n", memcmp(c, a, 5), ft_memcmp(c, a, 5)); // > 0
+	printf("%d == %d\n", memcmp(a, d, 3), ft_memcmp(a, d, 3)); // 0
+	printf("%d == %d\n", memcmp(a, d, 5), ft_memcmp(a, d, 5)); // > 0
+} */
 
 /*#include <stdio.h>
 int main()

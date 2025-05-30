@@ -6,7 +6,7 @@
 /*   By: mecetink <mecetink@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 12:21:55 by mecetink          #+#    #+#             */
-/*   Updated: 2025/05/30 14:34:37 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/05/30 18:18:46 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	const char	*f = s + ft_strlen((char *)s);
-	
+	const char	*f;
+
+	f = s + ft_strlen((char *)s);
 	while (f >= s)
 	{
 		if (*f == (char)c)
