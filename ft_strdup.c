@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mecetink <mecetink@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/30 17:40:59 by mecetink          #+#    #+#             */
-/*   Updated: 2025/05/30 18:22:39 by mecetink         ###   ########.fr       */
+/*   Created: 2025/06/01 00:41:12 by mecetink          #+#    #+#             */
+/*   Updated: 2025/06/01 00:42:10 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strdup(char *s)
 {
-	size_t	i;
+	int	len;
+	int	i;
+	char	*dup;
 
+	len = 0;
+	while (s[len])
+		len++;
+	dup = (char *)malloc(len + 1);
+	if (dup == NULL)
+		return (NULL);
 	i = 0;
-	while (i < n && s1[i] && s2[i] && s1[i] == s2[i])
+	while (i < len)
 	{
+		dup[i] = s[i];
 		i++;
 	}
-	if (i == n)
-		return (0);
-	return (s1[i] - s2[i]);
+	dup[i] = 0;
+	return (dup);
 }
