@@ -6,23 +6,17 @@
 /*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 14:00:41 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/01 00:50:29 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/01 22:42:17 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <assert.h>
 
-int main()
-{
-	const char *big = "Merhaba dünya!";
-    const char *little = "dünya";
-    size_t len = 12; // "Merhaba dünya!" (14 karakter)
+// memmove calloc strdup substr(not yet) strnstr memchr, libft test asserts
 
-    char *result = ft_strnstr(big, little, len);
-    if (result)
-        printf("Bulundu: %s\n", result); // Çıktı: "Bulundu: dünya!"
-    else
-        printf("Bulunamadı.\n");
+int main() {
+	printf("ok");
 }
 
 /* int main()

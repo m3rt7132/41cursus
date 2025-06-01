@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/01 00:41:12 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/01 20:36:39 by mecetink         ###   ########.fr       */
+/*   Created: 2025/06/01 21:45:20 by mecetink          #+#    #+#             */
+/*   Updated: 2025/06/01 22:33:11 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	int	len;
+	char	*copy;
 	int	i;
-	char	*dup;
 
-	len = 0;
-	while (s[len])
-		len++;
-	dup = (char *)malloc(len + 1);
-	if (dup == NULL)
+	if (start >= ft_strlen(s))
+		return ((char *)malloc(1));
+	copy = (char *)malloc(len + 1);
+	if (!copy)
 		return (NULL);
+	s = s + start;
 	i = 0;
-	while (i < len)
+	while (s[i])
 	{
-		dup[i] = s[i];
+		copy[i] = s[i];
 		i++;
 	}
-	dup[i] = 0;
-	return (dup);
+	copy[i] = 0;
+	return (copy);
 }
