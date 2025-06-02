@@ -6,11 +6,9 @@
 /*   By: mecetink <mecetink@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 14:00:07 by mecetink          #+#    #+#             */
-/*   Updated: 2025/05/30 14:09:53 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/02 18:04:11 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isdigit(int c)
 {

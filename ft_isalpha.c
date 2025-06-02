@@ -6,11 +6,9 @@
 /*   By: mecetink <mecetink@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 12:21:11 by mecetink          #+#    #+#             */
-/*   Updated: 2025/05/30 14:09:53 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/02 18:04:00 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isalpha(int c)
 {

@@ -6,11 +6,12 @@
 /*   By: mecetink <mecetink@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 15:16:33 by mecetink          #+#    #+#             */
-/*   Updated: 2025/05/30 18:22:56 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/02 18:23:02 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
+#include <stdlib.h>
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
@@ -18,7 +19,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	i = 0;
 	if (!dest && !src)
-		return (0);
+		return (NULL);
 	if (dest < src)
 	{
 		while (i < n)

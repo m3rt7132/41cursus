@@ -3,20 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
+/*   By: mecetink <mecetink@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 14:00:41 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/01 22:42:17 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/02 18:20:26 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <assert.h>
+#include <stdio.h>
+// libft test asserts
 
-// memmove calloc strdup substr(not yet) strnstr memchr, libft test asserts
-
-int main() {
-	printf("ok");
+int main()
+{
+	char *str = ",,abhellooo,,";
+	char *set = ",";
+	char *news = ft_strtrim(str, set);
+	printf("%s", news);
 }
 
 /* int main()
