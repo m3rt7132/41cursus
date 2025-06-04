@@ -1,3 +1,18 @@
+
+// size_t getheap(size_t align)
+// {
+// 	//497
+// 	//496
+// 	return ((align / sizeof(int)) * sizeof(int));
+// }
+
+// int main(int argc __attribute__ ((unused)), char **argv)
+// {
+// 	if (!argv[1])
+// 		return (0);
+// 	ft_putendl_fd(argv[1], 2);	
+// }
+
 /* void test_ft_calloc(void)
 {
 	void *p1 = ft_calloc(10, sizeof(int));

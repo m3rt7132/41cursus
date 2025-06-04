@@ -1,43 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/01 21:45:20 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/04 21:05:58 by mecetink         ###   ########.fr       */
+/*   Created: 2025/06/04 15:00:01 by mecetink          #+#    #+#             */
+/*   Updated: 2025/06/04 21:20:24 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-char	*ft_substr(const char *s, unsigned int start, size_t len)
+char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
-	char	*copy;
-	size_t	i;
+	char			*ret;
+	unsigned int	i;
 
-	if (start >= (unsigned int)ft_strlen(s))
-	{
-		copy = (char *)malloc(sizeof(char));
-		if (!copy)
-			return (NULL);
-		copy[0] = 0;
-		return (copy);
-	}
-	if (len > ft_strlen(s) - start)
-		len = ft_strlen(s) - start;
-	copy = (char *)malloc(sizeof(char) * (len + 1));
-	if (!copy)
-		return (NULL);
-	s = s + start;
+	if (!s)
+		return (0);
+	ret = (char *)malloc((sizeof(char) * ft_strlen(s)) + 1);
+	if (!ret)
+		return (0);
 	i = 0;
-	while (i < len && s[i])
+	while (s[i])
 	{
-		copy[i] = s[i];
+		ret[i] = f(i, s[i]);
 		i++;
 	}
-	copy[i] = 0;
-	return (copy);
+	ret[i] = 0;
+	return (ret);
 }

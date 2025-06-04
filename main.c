@@ -3,23 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mecetink <mecetink@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 14:00:41 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/02 18:20:26 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/04 21:40:49 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 // libft test asserts
+#include <string.h>
+#include <limits.h>
+#include <stddef.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include <unistd.h>
 
 int main()
 {
-	char *str = ",,abhellooo,,";
-	char *set = ",";
-	char *news = ft_strtrim(str, set);
-	printf("%s", news);
+	ft_putnbr_fd(0, 1);
 }
 
 /* int main()

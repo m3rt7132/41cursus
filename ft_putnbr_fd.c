@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/01 00:41:12 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/04 21:02:48 by mecetink         ###   ########.fr       */
+/*   Created: 2025/06/04 20:26:54 by mecetink          #+#    #+#             */
+/*   Updated: 2025/06/04 21:39:13 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <unistd.h>
 
-char	*ft_strdup(const char *s)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int		len;
-	int		i;
-	char	*dup;
+	char	out;
 
-	len = 0;
-	while (s[len])
-		len++;
-	dup = (char *)malloc(sizeof(char) * (len + 1));
-	if (dup == NULL)
-		return (NULL);
-	i = 0;
-	while (i < len)
+	if (n == -2147483648)
+		write(fd, "-2147483648", 11);
+	else
 	{
-		dup[i] = s[i];
-		i++;
+		if (n < 0)
+		{
+			write(fd, "-", 1);
+			n = -n;
+		}
+		if (n >= 10)
+			ft_putnbr_fd(n / 10, fd);
+		out = (n % 10) + '0';
+		write(fd, &out, 1);
 	}
-	dup[i] = 0;
-	return (dup);
 }

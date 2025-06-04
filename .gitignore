@@ -1,4 +1,7 @@
 .gitignore
-./vscode
+.vscode/
+.venv/
+tester/
+main.c
 *.o
 out

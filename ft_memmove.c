@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mecetink <mecetink@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 15:16:33 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/02 18:23:02 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/04 16:38:17 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	i = 0;
 	if (!dest && !src)
 		return (NULL);
+	if (dest == src)
+		return (dest);	
 	if (dest < src)
 	{
 		while (i < n)

@@ -1,35 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/01 00:41:12 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/04 21:02:48 by mecetink         ###   ########.fr       */
+/*   Created: 2025/06/04 18:57:03 by mecetink          #+#    #+#             */
+/*   Updated: 2025/06/04 21:32:05 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <unistd.h>
 
-char	*ft_strdup(const char *s)
+void	ft_putstr_fd(char *s, int fd)
 {
-	int		len;
-	int		i;
-	char	*dup;
+	int	i;
 
-	len = 0;
-	while (s[len])
-		len++;
-	dup = (char *)malloc(sizeof(char) * (len + 1));
-	if (dup == NULL)
-		return (NULL);
 	i = 0;
-	while (i < len)
-	{
-		dup[i] = s[i];
+	while (*(s + i))
 		i++;
-	}
-	dup[i] = 0;
-	return (dup);
+	write(fd, s, i);
 }
