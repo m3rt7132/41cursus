@@ -1,6 +1,0 @@
-.venv/
-.vscode/
-tester/
-main.c
-*.o
-out
