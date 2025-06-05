@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mecetink <mecetink@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 23:53:12 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/02 17:38:22 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/05 01:25:13 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ char	*ft_strnstr(const char *str, const char *tofind, size_t len)
 				return ((char *)&str[i]);
 		}
 		i++;
-	}	
+	}
 	return (NULL);
 }
