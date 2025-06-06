@@ -22,7 +22,7 @@ void close_log_file(void) {
 
 void log_start(const char *func_name) {
     fprintf(log_file, "====/-\\ Testing %s /-\\====\n", func_name);
-    printf("\033[1;34m[     RUN     ]\033[0m %s\n", func_name);
+    printf("\033[1;34m[     RUN     ] %s\033[0m\n", func_name);
 }
 
 void log_assert(int passed, const char *format, ...) {

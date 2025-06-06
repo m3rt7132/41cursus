@@ -6,7 +6,7 @@
 /*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 18:57:03 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/05 01:23:54 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/06 22:42:58 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,6 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	int	i;
-
-	i = 0;
-	while (*(s + i))
-		i++;
-	write(fd, s, i);
+	while (*s)
+		write(fd, s++, sizeof(char));
 }
