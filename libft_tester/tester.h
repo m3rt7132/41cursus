@@ -15,19 +15,29 @@
 void init_log_file(void);
 void close_log_file(void);
 void log_start(const char *func_name);
-void log_assert(int condition, const char *format, ...);
+void log_assert(int passed, const char *format, ...);
 void log_end(void);
 void log_info(const char *fmt, ...);
 void log_error(const char *fmt, ...);
 void log_warn(const char *fmt, ...);
 size_t getheap(size_t align);
-void print_result(const char *func_name, int passed, int expected, int got, const char *reason);
 char *generate_log_filename(void);
 
 /* tester libft prototypes */
 
-void test_ft_atoi(FILE *log);
+void test_ft_atoi(void);
 void test_ft_calloc(void);
+void test_ft_bzero(void);
+void test_ft_itoa(void);
+void test_ft_isalnum(void);
+void test_ft_isalpha(void);
+void test_ft_isdigit(void);
+void test_ft_isprint(void);
+void test_ft_isascii(void);
+void test_ft_putchar_fd(void);
+void test_ft_putstr_fd(void);
+void test_ft_putendl_fd(void);
+void test_ft_putnbr_fd(void);
 
 /* libft mandatory and additional functions */
 

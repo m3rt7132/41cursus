@@ -21,16 +21,16 @@ void close_log_file(void) {
 }
 
 void log_start(const char *func_name) {
-    fprintf(log_file, "==== Testing %s ====\n", func_name);
-    printf("\033[1;34m[ RUN      ]\033[0m %s\n", func_name);
+    fprintf(log_file, "====/-\\ Testing %s /-\\====\n", func_name);
+    printf("\033[1;34m[     RUN     ]\033[0m %s\n", func_name);
 }
 
-void log_assert(int condition, const char *format, ...) {
+void log_assert(int passed, const char *format, ...) {
 	va_list args;
     va_start(args, format);
 	
-    if (condition) {
-		printf("\033[1;32m[     OK   ]\033[0m ");
+    if (passed) {
+		printf("\033[1;32m[   OK   ]\033[0m ");
         vprintf(format, args);
         printf("\n");
         fprintf(log_file, "[OK] ");
@@ -40,12 +40,12 @@ void log_assert(int condition, const char *format, ...) {
     } else {
 		printf("\033[1;31m[  FAILED  ]\033[0m ");
         vprintf(format, args);
-        printf("\n");
+		printf("\n");
         fprintf(log_file, "[FAIL] ");
         va_start(args, format);
         vfprintf(log_file, format, args);
-        fprintf(log_file, " (expected = 0, got = 1)\n");
-        assert(0 && "Assertion failed");
+		fprintf(log_file, "\n");
+        // assert(0 && "Assertion failed");
     }
     va_end(args);
 }
@@ -79,7 +79,6 @@ void log_error(const char *fmt, ...)
     va_list args;
     va_start(args, fmt);
 
-    // Terminale yaz (kırmızı)
     printf("\033[0;31m[ERROR]\033[0m ");
     vprintf(fmt, args);
     printf("\n");
@@ -99,7 +98,6 @@ void log_warn(const char *fmt, ...)
     va_list args;
     va_start(args, fmt);
 
-    // Terminale yaz (sarı)
     printf("\033[0;33m[WARN]\033[0m ");
     vprintf(fmt, args);
     printf("\n");
@@ -125,26 +123,8 @@ char *generate_log_filename(void)
     time_t now = time(NULL);
     struct tm *t = localtime(&now);
     snprintf(filename, sizeof(filename),
-             "logs/test_%02d-%02d_%02d-%02d-%02d.txt",
+             "logs/test_%02d-%02d_%02d-%02d.txt",
             /*  t->tm_year + 1900,*/ t->tm_mon + 1, t->tm_mday,
-             t->tm_hour, t->tm_min, t->tm_sec);
+             t->tm_hour, t->tm_min);
     return filename;
-}
-
-void print_result(const char *func_name, int passed, int expected, int got, const char *reason)
-{
-    if (passed)
-    {
-        printf("\033[0;32m[OK]\033[0m %s\n", func_name);
-        if (log_file)
-            fprintf(log_file, "[OK] %s\n", func_name);
-    }
-    else
-    {
-        printf("\033[0;31m[FAIL]\033[0m %s - %s (expected=%d, got=%d)\n",
-               func_name, reason, expected, got);
-        if (log_file)
-            fprintf(log_file, "[FAIL] %s - %s (expected=%d, got=%d)\n",
-                    func_name, reason, expected, got);
-    }
 }

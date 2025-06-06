@@ -1,31 +1,41 @@
 #include "tester.h"
 
-void test_ft_atoi(FILE *log)
+void test_ft_atoi()
 {
-    const char *inputs[] = {
-        "42", "-42", "0", "+42", "    123", "   -00123", "a42", "  +00123abc",
-        "", "    ", "2147483647", "-2147483648", "9999999999", "-9999999999"
-		};
-	size_t	num_tests = sizeof(inputs) / sizeof(inputs[0]);
-	printf("%zu", num_tests);
-    fprintf(log, "Testing ft_atoi...\n");
+	log_start("ft_atoi");
 
-    for (size_t i = 0; i < num_tests; ++i)
-    {
-        const char *input = inputs[i];
-        int expected = atoi(input);
-        int result = ft_atoi(input);
+	struct {
+    	const char *input;
+    	const char *reason;
+	} test_cases[] = {
+    	{"42", "Basic positive number"},
+    	{"-42", "Basic negative number"},
+    	{"0", "Zero input"},
+    	{"+42", "Positive sign"},
+    	{"    123", "Leading whitespace"},
+    	{"   -00123", "Negative with leading zeros"},
+    	{"a42", "Invalid start character"},
+    	{"  +00123abc", "Valid number followed by junk"},
+    	{"", "Empty string"},
+    	{"    ", "Only whitespace"},
+    	{"2147483647", "Max int"},
+    	{"-2147483648", "Min int"},
+    	{"9999999999", "Positive overflow"},
+    	{"-9999999999", "Negative overflow"},
+    	{"11111111111111111111111111111111111", "Extreme overflow"},
+	};
+	size_t num_tests = sizeof(test_cases) / sizeof(test_cases[0]);
 
-        if (expected != result)
-        {
-            fprintf(log, "[FAIL] input=\"%s\" | expected = %d | got = %d\n", input, expected, result);
-            assert(expected == result);
-        }
-        else
-        {
-            fprintf(log, "[OK] input=\"%s\"\n", input);
-        }
-    }
+	for (size_t i = 0; i < num_tests; ++i)
+	{
+		const char *input = test_cases[i].input;
+		const char *reason = test_cases[i].reason;
+		int expected = atoi(input);
+		int got = ft_atoi(input);
+		int passed = (expected == got);
 
-    fprintf(log, "Done testing ft_atoi.\n\n");
+		log_assert(passed, "ft_atoi(\"%s\") | (Reason: %s) expected=%d, got=%d", input, 
+			reason && !passed ? reason : "-", expected, got);
+	}
+	log_end();
 }

@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mecetink <mecetink@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 16:04:58 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/02 15:45:50 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/06 17:20:24 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_atoi(const char *nptr)
 {
-	int	sign;
-	int	res;
-	int	i;
+	int		sign;
+	long	res;
+	int		i;
 
 	i = 0;
 	res = 0;
@@ -32,5 +32,5 @@ int	ft_atoi(const char *nptr)
 		res = res * 10 + (nptr[i] - '0');
 		i++;
 	}
-	return (sign * res);
+	return ((int)(sign * res));
 }

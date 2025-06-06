@@ -17,5 +17,8 @@ clean:
 	rm -f $(NAME)
 
 fclean: clean
+	rm -f logs/*.txt
 
 re: fclean all
+
+.PHONY: all run clean fclean re

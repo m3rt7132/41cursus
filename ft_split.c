@@ -6,7 +6,7 @@
 /*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 20:26:32 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/05 12:39:08 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/05 12:43:31 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,23 @@
 int	count_words(const char *s, char c, int push, char **arr)
 {
 	int	words;
-	int	next_or_cur_offset;
+	int	next_offset;
 	int	cur_char;
 
-	next_or_cur_offset = 0;
+	next_offset = 0;
 	cur_char = 0;
 	words = 0;
 	while (1)
 	{
-		if (s[cur_char + next_or_cur_offset] == c || s[cur_char + next_or_cur_offset] == 0)
+		if (s[cur_char + next_offset] == c || s[cur_char + next_offset] == 0)
 		{
 			if (push && arr != NULL)
-				arr[words++] = ft_substr(s, next_or_cur_offset, cur_char);
+				arr[words++] = ft_substr(s, next_offset, cur_char);
 			else
 				words++;
-			if (s[cur_char + next_or_cur_offset] == 0)
-				break;
-			next_or_cur_offset += cur_char + 1;
+			if (s[cur_char + next_offset] == 0)
+				break ;
+			next_offset += cur_char + 1;
 			cur_char = 0;
 		}
 		else
@@ -41,10 +41,10 @@ int	count_words(const char *s, char c, int push, char **arr)
 	return (words);
 }
 
-char **ft_split(const char *s, char c)
+char	**ft_split(const char *s, char c)
 {
-	char **arr;
-	int words;
+	char	**arr;
+	int		words;
 
 	if (!s)
 		return (0);
