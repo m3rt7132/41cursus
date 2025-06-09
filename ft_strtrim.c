@@ -6,7 +6,7 @@
 /*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 16:44:07 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/04 21:04:58 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/08 12:22:02 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 	if (s1 == NULL || set == NULL)
 		return (NULL);
 	if (*s1 == 0)
-		return ((char *)malloc(1));
+		return ((char *)malloc(sizeof(char)));
 	setlength = ft_strlen(s1);
 	start = 0;
 	while (s1[start] && ft_strchr(set, s1[start]))

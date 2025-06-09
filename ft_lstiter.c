@@ -1,39 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/02 16:07:04 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/08 12:26:02 by mecetink         ###   ########.fr       */
+/*   Created: 2025/06/09 12:01:12 by mecetink          #+#    #+#             */
+/*   Updated: 2025/06/09 12:04:00 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-char	*ft_strjoin(const char *s1, const char *s2)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	char	*newstr;
-	int		i;
-
-	i = 0;
-	newstr = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (!newstr)
-		return (NULL);
-	while (*s1)
+	if (!lst)
+		return ;
+	while (lst->next)
 	{
-		newstr[i] = *s1;
-		s1++;
-		i++;
+		f(lst->content);
+		lst = lst->next;
 	}
-	while (*s2)
-	{
-		newstr[i] = *s2;
-		s2++;
-		i++;
-	}
-	newstr[i] = 0;
-	return (newstr);
 }
