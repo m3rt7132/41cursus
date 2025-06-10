@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
+/*   By: mecetink <mecetink@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 11:59:51 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/09 12:06:22 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/10 11:58:41 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

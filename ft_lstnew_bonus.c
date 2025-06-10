@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
+/*   By: mecetink <mecetink@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 12:27:00 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/08 13:20:46 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/10 11:58:51 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
