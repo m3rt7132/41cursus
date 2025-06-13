@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
+/*   By: mecetink <mecetink@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 16:44:07 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/08 12:22:02 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/13 12:57:54 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,12 @@ char	*ft_strtrim(const char *s1, const char *set)
 	if (s1 == NULL || set == NULL)
 		return (NULL);
 	if (*s1 == 0)
-		return ((char *)malloc(sizeof(char)));
+	{
+		newstr = ((char *)malloc(sizeof(char)));
+		if (newstr)
+			*newstr = 0;
+		return (newstr);
+	}
 	setlength = ft_strlen(s1);
 	start = 0;
 	while (s1[start] && ft_strchr(set, s1[start]))

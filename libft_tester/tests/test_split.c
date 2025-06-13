@@ -18,6 +18,8 @@ void test_ft_split(void)
 			(const char *[]){"one", "", "three", NULL}, "Empty segment"},
 		{"", ' ', 
 			(const char *[]){NULL}, "Empty string"},
+		{" hello world ", ' '},
+			(const char *[]{"hello", "world"})
 	};
 
 	size_t num_tests = sizeof(test_cases) / sizeof(test_cases[0]);
