@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
+/*   By: mecetink <mecetink@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 20:26:32 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/05 12:43:31 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/13 14:36:51 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-int	count_words(const char *s, char c, int push, char **arr)
+/* int	count_words(const char *s, char c, int push, char **arr)
 {
 	int	words;
 	int	next_offset;
@@ -39,7 +39,35 @@ int	count_words(const char *s, char c, int push, char **arr)
 			cur_char++;
 	}
 	return (words);
+} */
+
+int	count_words(const char *s, char c, int push, char **arr)
+{
+	int	i;
+	int	word_len;
+	int	words;
+
+	i = 0;
+	words = 0;
+	while (s[i])
+	{
+		while (s[i] == c)
+			i++;
+		word_len = 0;
+		while (s[i + word_len] && s[i + word_len] != c)
+			word_len++;
+		if (word_len > 0)
+		{
+			if (push && arr)
+				arr[words++] = ft_substr(s + i, 0, word_len);
+			else
+				words++;
+			i += word_len;
+		}
+	}
+	return (words);
 }
+
 
 char	**ft_split(const char *s, char c)
 {

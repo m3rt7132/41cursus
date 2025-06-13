@@ -55,6 +55,7 @@ int	main()
 		",",
 		"abc,",
 		",abc",
+		"abc,,def",
 		NULL
 	};
 
