@@ -46,26 +46,28 @@ int	main()
 	// char *str = "---hello--";
 	// printf("%s", ft_strtrim(str, "-"));
 	
-	char *inputs[] = {
-		"hello world",
-		"   hello  world  ",
-		"",
-		"a,,b,c",
-		"a,b,c",
-		",",
-		"abc,",
-		",abc",
-		"abc,,def",
-		NULL
-	};
+	// char *inputs[] = {
+	// 	"hello world",
+	// 	"   hello  world  ",
+	// 	"",
+	// 	"a,,b,c",
+	// 	"a,b,c",
+	// 	",",
+	// 	"abc,",
+	// 	",abc",
+	// 	"abc,,def",
+	// 	NULL
+	// };
 
-	for (int i = 0; inputs[i]; i++) {
-		printf("Input: \"%s\"\n", inputs[i]);
-		char **arr = ft_split(inputs[i], ',');
-		int i = 0;
-		while (arr && arr[i])
-			printf("[%s]\n", arr[i++]);
-		printf("---\n");
-	}
+	// for (int i = 0; inputs[i]; i++) {
+	// 	printf("Input: \"%s\"\n", inputs[i]);
+	// 	char **arr = ft_split(inputs[i], ',');
+	// 	int i = 0;
+	// 	while (arr && arr[i])
+	// 		printf("[%s]\n", arr[i++]);
+	// 	printf("---\n");
+	// }
+	int a = ft_strncmp("test\200", "test\0", 6);
+	printf("%d", a);
 	
 }
