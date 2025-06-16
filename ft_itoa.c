@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
+/*   By: mecetink <mecetink@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 20:51:14 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/04 21:02:38 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/16 14:44:16 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ char	*ft_itoa(int n)
 	if (is_negative)
 		num = -num;
 	len = countdigit(num) + is_negative;
-	ret = (char *)malloc(sizeof(char) * (len + 1));
+	ret = (char *) malloc(sizeof(char) * (len + 1));
 	if (!ret)
-		return (0);
+		return (NULL);
 	ret[len--] = 0;
 	if (is_negative)
 		ret[0] = '-';

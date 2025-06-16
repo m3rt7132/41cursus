@@ -6,7 +6,7 @@
 /*   By: mecetink <mecetink@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 16:44:07 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/13 12:57:54 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/16 13:55:42 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 		return (NULL);
 	if (*s1 == 0)
 	{
-		newstr = ((char *)malloc(sizeof(char)));
+		newstr = ((char *) malloc(sizeof(char)));
 		if (newstr)
 			*newstr = 0;
 		return (newstr);
@@ -34,7 +34,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 		start++;
 	while (setlength > start && ft_strchr(set, s1[setlength - 1]))
 		setlength--;
-	newstr = (char *)malloc(sizeof(char) * (setlength - start + 1));
+	newstr = (char *) malloc(sizeof(char) * (setlength - start + 1));
 	if (!newstr)
 		return (NULL);
 	ft_memcpy(newstr, s1 + start, setlength - start);

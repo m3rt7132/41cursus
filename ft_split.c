@@ -6,40 +6,12 @@
 /*   By: mecetink <mecetink@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 20:26:32 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/13 14:36:51 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/16 15:32:49 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
-
-/* int	count_words(const char *s, char c, int push, char **arr)
-{
-	int	words;
-	int	next_offset;
-	int	cur_char;
-
-	next_offset = 0;
-	cur_char = 0;
-	words = 0;
-	while (1)
-	{
-		if (s[cur_char + next_offset] == c || s[cur_char + next_offset] == 0)
-		{
-			if (push && arr != NULL)
-				arr[words++] = ft_substr(s, next_offset, cur_char);
-			else
-				words++;
-			if (s[cur_char + next_offset] == 0)
-				break ;
-			next_offset += cur_char + 1;
-			cur_char = 0;
-		}
-		else
-			cur_char++;
-	}
-	return (words);
-} */
 
 int	count_words(const char *s, char c, int push, char **arr)
 {
@@ -56,6 +28,7 @@ int	count_words(const char *s, char c, int push, char **arr)
 		word_len = 0;
 		while (s[i + word_len] && s[i + word_len] != c)
 			word_len++;
+		
 		if (word_len > 0)
 		{
 			if (push && arr)
@@ -67,7 +40,6 @@ int	count_words(const char *s, char c, int push, char **arr)
 	}
 	return (words);
 }
-
 
 char	**ft_split(const char *s, char c)
 {
