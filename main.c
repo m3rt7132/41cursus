@@ -22,52 +22,49 @@ void	free_content(void *content)
 
 int	main()
 {
-	// t_list *a __attribute__((unused)) = ft_lstnew(ft_strdup("hello"));
-	// t_list *b __attribute__((unused)) = ft_lstnew(ft_strdup("world"));
-	// t_list *c __attribute__((unused)) = ft_lstnew(ft_strdup("libft"));
+	t_list *a __attribute__((unused)) = ft_lstnew(ft_strdup("ilk"));
+	t_list *b __attribute__((unused)) = ft_lstnew(ft_strdup("ikişci"));
+	t_list *c __attribute__((unused)) = ft_lstnew(ft_strdup("ücücncü"));
 
-	// ft_lstadd_back(&a, b);
-	// ft_lstadd_back(&a, c);
+	ft_lstadd_back(&a, b);
+	ft_lstadd_back(&a, c);
 
-	// t_list *mapped = ft_lstmap(a, dup_uppercase, free_content);
+	t_list *mapped = ft_lstmap(a, dup_uppercase, free_content);
 
-	// // Yazdırmak için:
-	// t_list *tmp = mapped;
-	// while (tmp)
-	// {
-	// 	printf("%s\n", (char *)tmp->content);
-	// 	tmp = tmp->next;
-	// }
+	// Yazdırmak için:
+	t_list *tmp = mapped;
+	while (tmp)
+	{
+		printf("%s\n", (char *)tmp->content);
+		tmp = tmp->next;
+	}
 
-	// // Temizle
-	// ft_lstclear(&a, free_content);
-	// ft_lstclear(&mapped, free_content);
+	// Temizle
+	ft_lstclear(&a, free_content);
+	ft_lstclear(&mapped, free_content);
 
-	// char *str = "---hello--";
-	// printf("%s", ft_strtrim(str, "-"));
+	/* char *str = "---hello--";
+	printf("%s", ft_strtrim(str, "-"));
 	
-	// char *inputs[] = {
-	// 	"hello world",
-	// 	"   hello  world  ",
-	// 	"",
-	// 	"a,,b,c",
-	// 	"a,b,c",
-	// 	",",
-	// 	"abc,",
-	// 	",abc",
-	// 	"abc,,def",
-	// 	NULL
-	// };
+	char *inputs[] = {
+		"hello world",
+		"   hello  world  ",
+		"",
+		"a,,b,c",
+		"a,b,c",
+		",",
+		"abc,",
+		",abc",
+		"abc,,def",
+		NULL
+	};
 
-	// for (int i = 0; inputs[i]; i++) {
-	// 	printf("Input: \"%s\"\n", inputs[i]);
-	// 	char **arr = ft_split(inputs[i], ',');
-	// 	int i = 0;
-	// 	while (arr && arr[i])
-	// 		printf("[%s]\n", arr[i++]);
-	// 	printf("---\n");
-	// }
-	int a = ft_strncmp("test\200", "test\0", 6);
-	printf("%d", a);
-	
+	for (int i = 0; inputs[i]; i++) {
+		printf("Input: \"%s\"\n", inputs[i]);
+		char **arr = ft_split(inputs[i], ',');
+		int i = 0;
+		while (arr && arr[i])
+			printf("[%s]\n", arr[i++]);
+		printf("---\n");
+	} */
 }

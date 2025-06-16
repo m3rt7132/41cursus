@@ -6,7 +6,7 @@
 /*   By: mecetink <mecetink@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 20:26:32 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/16 15:32:49 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/16 15:38:31 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int	count_words(const char *s, char c, int push, char **arr)
 		word_len = 0;
 		while (s[i + word_len] && s[i + word_len] != c)
 			word_len++;
-		
 		if (word_len > 0)
 		{
 			if (push && arr)
