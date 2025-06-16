@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mecetink <mecetink@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 16:44:07 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/16 13:55:42 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/17 00:48:49 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -15,6 +15,12 @@ void	*dup_uppercase(void *content)
 	return new_str;
 }
 
+void exiteri(unsigned int i __attribute__((unused)), char *c)
+{
+	if (*c >= 'a' && *c <= 'z')
+		*c -= 32;
+}
+
 void	free_content(void *content)
 {
 	free(content);
@@ -22,26 +28,26 @@ void	free_content(void *content)
 
 int	main()
 {
-	t_list *a __attribute__((unused)) = ft_lstnew(ft_strdup("ilk"));
-	t_list *b __attribute__((unused)) = ft_lstnew(ft_strdup("ikişci"));
-	t_list *c __attribute__((unused)) = ft_lstnew(ft_strdup("ücücncü"));
+	// t_list *a __attribute__((unused)) = ft_lstnew(ft_strdup("ilk"));
+	// t_list *b __attribute__((unused)) = ft_lstnew(ft_strdup("ikişci"));
+	// t_list *c __attribute__((unused)) = ft_lstnew(ft_strdup("ücücncü"));
 
-	ft_lstadd_back(&a, b);
-	ft_lstadd_back(&a, c);
+	// ft_lstadd_back(&a, b);
+	// ft_lstadd_back(&a, c);
 
-	t_list *mapped = ft_lstmap(a, dup_uppercase, free_content);
+	// t_list *mapped = ft_lstmap(a, dup_uppercase, free_content);
 
-	// Yazdırmak için:
-	t_list *tmp = mapped;
-	while (tmp)
-	{
-		printf("%s\n", (char *)tmp->content);
-		tmp = tmp->next;
-	}
+	// // Yazdırmak için:
+	// t_list *tmp = mapped;
+	// while (tmp)
+	// {
+	// 	printf("%s\n", (char *)tmp->content);
+	// 	tmp = tmp->next;
+	// }
 
-	// Temizle
-	ft_lstclear(&a, free_content);
-	ft_lstclear(&mapped, free_content);
+	// // Temizle
+	// ft_lstclear(&a, free_content);
+	// ft_lstclear(&mapped, free_content);
 
 	/* char *str = "---hello--";
 	printf("%s", ft_strtrim(str, "-"));
@@ -67,4 +73,8 @@ int	main()
 			printf("[%s]\n", arr[i++]);
 		printf("---\n");
 	} */
+	char *s = "hello world";
+	char *new = ft_substr(s, 13, 5);
+	printf("%s", new);
+	free(new);
 }

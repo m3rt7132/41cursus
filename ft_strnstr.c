@@ -6,7 +6,7 @@
 /*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 23:53:12 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/05 01:25:13 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/17 00:57:26 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strnstr(const char *str, const char *tofind, size_t len)
 		if (str[i] == tofind[0])
 		{
 			j = 0;
-			while (tofind[j] && str[i + j]
+			while (str[i + j]
 				&& (i + j) < len && str[i + j] == tofind[j])
 				j++;
 			if (tofind[j] == 0)

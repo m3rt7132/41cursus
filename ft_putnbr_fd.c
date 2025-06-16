@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mecetink <mecetink@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 20:26:54 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/16 15:12:03 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/16 22:05:03 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	if (n >= 10)
 		ft_putnbr_fd(n / 10, fd);
-	write(fd, "0123456789" + (n % 10), sizeof(char));
+	write(fd, &"0123456789"[n % 10], sizeof(char));
 }

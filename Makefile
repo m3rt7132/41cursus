@@ -28,7 +28,9 @@ test: $(NAME)
 	$(CC) $(CFLAGS) main.c -L. -lft -o out
 
 bonus: $(OBJS) $(BOBJS)
-	$(AR) $(NAME) $(OBJS) $(BOBJS)
+	@if ! ar t $(NAME) 2>/dev/null | grep -q 'lst'; then \
+		ar rcs $(NAME) $(OBJS) $(BOBJS); \
+	fi
 	$(CC) $(CFLAGS) main.c -L. -lft -o out
 
 $(NAME): $(OBJS)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mecetink <mecetink@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 21:45:20 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/16 15:35:39 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/17 01:06:41 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	char	*copy;
 	size_t	i;
 
-	if (start >= (unsigned int) ft_strlen(s))
+	if (start >= (unsigned int)ft_strlen(s))
 	{
 		copy = (char *) malloc(sizeof(char));
 		if (!copy)

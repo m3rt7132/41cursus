@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mecetink <mecetink@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 12:21:55 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/02 17:38:09 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/17 01:02:41 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,5 @@ char	*ft_strrchr(const char *s, int c)
 			return ((char *)f);
 		f--;
 	}
-	if ((char)c == '\0')
-		return ((char *)s);
 	return (0);
 }
