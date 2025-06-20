@@ -6,7 +6,7 @@
 /*   By: mecetink <mecetink@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 16:44:07 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/19 17:09:11 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/20 15:22:44 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ char	*ft_strtrim(const char *s1, const char *set)
 		return (NULL);
 	if (*s1 == 0)
 	{
-		newstr = ((char *) malloc(sizeof(char)));
-		if (newstr)
-			*newstr = 0;
+		newstr = ft_strdup("");
+		if (!newstr)
+			return (NULL);
 		return (newstr);
 	}
 	srclength = ft_strlen(s1);

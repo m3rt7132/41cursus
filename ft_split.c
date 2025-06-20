@@ -6,7 +6,7 @@
 /*   By: mecetink <mecetink@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 20:26:32 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/17 12:56:16 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/20 15:20:27 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char	**ft_split(const char *s, char c)
 	if (!s)
 		return (0);
 	words = count_words(s, c, 0, 0);
-	arr = (char **)malloc((sizeof(char *) * (words + 1)));
+	arr = (char **) malloc((sizeof(char *) * (words + 1)));
 	if (!arr)
 		return (0);
 	words = count_words(s, c, 1, arr);

@@ -6,7 +6,7 @@
 /*   By: mecetink <mecetink@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 13:16:28 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/16 14:45:16 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/20 15:21:03 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	i = 0;
 	if (!dest && !src)
 		return (NULL);
-	d = dest;
-	s = src;
+	d = (char *) dest;
+	s = (const char *) src;
 	while (i < n)
 	{
 		d[i] = s[i];
