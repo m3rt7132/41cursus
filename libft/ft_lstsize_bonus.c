@@ -3,12 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mecetink <mecetink@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 11:45:12 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/16 14:39:50 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/24 17:36:36 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * Counts the number of elements in the linked list.
+ * @param lst Pointer to the first element of the list.
+ * @return The number of elements in the list.
+ */
 
 #include "libft.h"
 

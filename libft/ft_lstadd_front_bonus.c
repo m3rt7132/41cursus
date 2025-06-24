@@ -3,12 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mecetink <mecetink@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 13:36:54 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/17 12:50:42 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/24 17:21:22 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * Adds the element 'new' at the beginning of the list.
+ * If the list is empty, it sets 'new' as the first element.
+ * @param lst Pointer to the pointer of the first element of the list.
+ * @param new Pointer to the new element to be added.
+ * @return VOID.
+ */
 
 #include "libft.h"
 

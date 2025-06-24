@@ -3,12 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mecetink <mecetink@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 20:51:14 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/17 13:01:01 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/24 17:29:27 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * Converts an integer to a string representation.
+ * This function allocates memory for the string,
+ * so it is the caller's responsibility to free it.
+ * @param n The integer to convert.
+ * @return A pointer to the string representation of the integer,
+ * @return or NULL if the allocation fails.
+ * * If the integer is 0, it returns "0".
+ * * If the integer is negative, it returns a string starting with '-'.
+ * ? Example:
+ * * - ft_itoa(42) returns "42"
+ * * - ft_itoa(-42) returns "-42"
+ * * - ft_itoa(0) returns "0"
+ * ! Note: The returned string is dynamically allocated,
+ * ! so it should be freed by the caller when no longer needed.
+ */
 
 #include <stdlib.h>
 #include "libft.h"
@@ -42,7 +59,7 @@ char	*ft_itoa(int n)
 	len = countdigit(num) + is_negative;
 	ret = (char *) malloc(sizeof(char) * (len + 1));
 	if (!ret)
-		return (NULL);
+		return ((void *)0);
 	ret[len--] = 0;
 	if (is_negative)
 		ret[0] = '-';

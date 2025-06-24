@@ -3,12 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mecetink <mecetink@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 16:04:58 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/16 14:27:50 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/24 17:18:08 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * Converts a string to an integer.
+ * It ignores whitespace, handles only 1 (ONE) optional '+' or '-' signs,
+ * and converts the string to an integer until a non-digit character is found.
+ * If the string starts with a sign, it will return a negative or positive integer accordingly.
+ * @param nptr The string to convert.
+ * @return The converted integer.
+ * @return If the string does not contain any digits, it returns 0.
+ * ? Example:
+ * * - "42" -> 42
+ * * - "   -42" -> -42
+ * * - "42abc" -> 42
+ */
 
 int	ft_atoi(const char *nptr)
 {
