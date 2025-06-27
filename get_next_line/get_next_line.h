@@ -5,6 +5,10 @@
 # include <stdlib.h>
 # include <stddef.h>
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
 char	*get_next_line(int fd);
 size_t	ft_strlen(const char *s);
 void	*ft_memset(void *s, int c, size_t n);
