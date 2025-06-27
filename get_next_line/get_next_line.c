@@ -1,27 +1,5 @@
 #include "get_next_line.h"
 
-char	*ft_strdup(const char *s)
-{
-	int		len;
-	int		i;
-	char	*dup;
-
-	len = 0;
-	while (s[len])
-		len++;
-	dup = (char *) malloc(sizeof(char) * (len + 1));
-	if (dup == NULL)
-		return ((void *)0);
-	i = 0;
-	while (i < len)
-	{
-		dup[i] = s[i];
-		i++;
-	}
-	dup[i] = 0;
-	return (dup);
-}
-
 char	*save_rest(char *buf)
 {
 	int		i;
@@ -42,16 +20,15 @@ char	*save_rest(char *buf)
 
 char	*extract_line(char *buf)
 {
-	int i;
-	char *line;
+	char	*line;
+	int		i;
 
 	i = 0;
 	if (!buf || !buf[0])
 		return ((void *)0);
 	while (buf[i] && buf[i] != '\n')
 		i++;
-	if (buf[i] == '\n')
-		i++;
+	i += (buf[i] == '\n');
 	line = ft_substr(buf, 0, i);
 	return (line);
 }
@@ -69,7 +46,6 @@ char	*read_line(int fd, char *buf)
 	while (!ft_strchr(buf, '\n'))
 	{
 		r = read(fd, tmp, BUFFER_SIZE);
-		printf("\nr:%zu\nbuf:%s\n",r,buf);
 		if (r <= 0)
 			break;
 		tmp[r] = 0;

@@ -10,31 +10,46 @@ size_t	ft_strlen(const char *s)
 	return (s - start);
 }
 
+char	*ft_strdup(const char *s)
+{
+	size_t	len;
+	size_t	i;
+	char	*dup;
+
+	len = ft_strlen(s);
+	dup = (char *) malloc(sizeof(char) * (len + 1));
+	if (dup == NULL)
+		return ((void *)0);
+	i = 0;
+	while (i < len)
+	{
+		dup[i] = s[i];
+		i++;
+	}
+	dup[i] = 0;
+	return (dup);
+}
+
 char	*ft_strjoin(char *s1, const char *s2)
 {
 	char	*newstr;
-	size_t	s1len;
-	size_t	s2len;
 	size_t	i;
 
 	i = 0;
-	s1len = ft_strlen(s1);
-	s2len = ft_strlen(s2);
-	newstr = (char *) malloc(sizeof(char) * (s1len + s2len + 1));
+	newstr = (char *) malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!newstr)
 		return (NULL);
-	while (*s1)
+	while (s1[i])
 	{
-		newstr[i] = *s1;
-		s1++;
+		newstr[i] = s1[i];
 		i++;
 	}
-	while (*s2)
+	while (s2[i])
 	{
-		newstr[i] = *s2;
-		s2++;
+		newstr[i] = s2[i];
 		i++;
 	}
+	free(s1);
 	newstr[i] = 0;
 	return (newstr);
 }
@@ -79,22 +94,4 @@ char	*ft_strchr(const char *s, int c)
 		s++;
 	}
 	return ((void *)0);
-}
-
-void	*ft_calloc(size_t nmemb, size_t size)
-{
-	void	*alloc;
-	size_t	tozero;
-
-	tozero = nmemb * size;
-	alloc = malloc(tozero);
-	if (alloc == NULL)
-		return ((void *)0);
-	while (tozero)
-	{
-		*(((unsigned char *)alloc) + tozero) = 0;
-		tozero--;
-	}
-	*((unsigned char *)alloc + 0) = 0;
-	return (alloc);
 }

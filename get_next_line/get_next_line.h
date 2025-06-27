@@ -4,6 +4,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stddef.h>
+# include <stdio.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
@@ -17,8 +18,5 @@ char	*ft_substr(const char *s, unsigned int start, size_t len);
 char	*ft_strdup(const char *s);
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strchr(const char *s, int c);
-char	*read_line(int fd, char *buf);
-char	*extract_line(char *buf);
-char	*save_rest(char *buf);
 
 #endif
