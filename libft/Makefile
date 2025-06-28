@@ -25,7 +25,7 @@ all: $(NAME)
 
 test: $(NAME)
 	@rm -f out
-	$(CC) $(CFLAGS) main.c -L. -lft -o out
+	$(CC) $(CFLAGS) main.c -L. -lft -o out && ./out
 
 bonus: $(OBJS) $(BOBJS)
 	@if ! ar t $(NAME) 2>/dev/null | grep -q 'lst'; then \

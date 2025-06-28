@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include <unistd.h>
 
 void del(void *content)
 {
@@ -84,7 +85,8 @@ size_t slen(char *s)
     size_t slen(char *s)
     return ((size_t)printf(s));
 }
-*//*
+*/
+/*
 size_t slen(char *s)
 {
     return (*s == 0 ? 0 : slen(s + 1) + 1);
@@ -116,17 +118,24 @@ size_t slenp(char *s)
 
 int main()
 {
-    int j = 15;
-    printf("%d in binary\t\t", j);
-    showbits(j);
-
+    int num = 255;
+    printf("%d in binary\t\t", num);
+    showbits(num);
+	int n;
     /* the loop for right shift operation */
-    for (int m = 0; m <= 5; m++)
+    for (int right = 0; right <= 5; right++)
     {
-        int n = j >> m;
-        printf("%d right shift %d gives ", j, m);
+        n = num >> right;
+        printf("%d right shift %d gives ", num, right);
         showbits(n);
     }
+	printf("\n");
+	for (int left = 0; left <= 5; left++)
+	{
+		n = num << left;
+		printf("%d left shift %d gives ", num, left);
+		showbits(n);
+	}
     // size_t len = slenp("mert");
     // size_t len2 = slena("mert");
     // printf("snprintf:%zu\n", len);
