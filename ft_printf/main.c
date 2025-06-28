@@ -3,7 +3,8 @@
 
 int main(void)
 {
-	// printf("test %s\n", "printf original");
-	ft_printf("%%\n");
-	printf("%%\n");
+	int a = ft_printf("mert %s", "bir");
+	printf("\n%d\n", a);
+	// printf(" NULL %s NULL\n", NULL);
+	// printf(" %p %p ", 0, 0);
 }

@@ -18,7 +18,7 @@ ssize_t ft_putstr(const char *s)
 		out = "(null)";
 	else
 		out = s;
-    return (write(1, out, ft_strlen(s)));
+    return (write(1, out, ft_strlen(out)));
 }
 
 static int	countdigit(long n)
@@ -92,7 +92,7 @@ char	*ft_utoa_base(unsigned long num, const char *base)
 	int		base_len = ft_strlen(base);
 	int		i = 20;
 
-	buffer[i--] = '\0';
+	buffer[i--] = 0;
 	if (num == 0)
 		buffer[i--] = '0';
 	while (num > 0)

@@ -92,6 +92,8 @@ ssize_t	handle_ptr(va_list args)
 	ssize_t			written;
 
 	ptr = (unsigned long)va_arg(args, void *);
+	if (ptr == 0)
+		return (ft_putstr("0x0"));
 	str = ft_utoa_base(ptr, "0123456789abcdef");
 	if (!str)
 		return (-1);
