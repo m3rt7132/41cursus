@@ -6,11 +6,11 @@
 /*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 18:04:07 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/29 18:05:56 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/30 00:06:36 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
 ssize_t	handle_int(va_list args)
 {
@@ -22,7 +22,7 @@ ssize_t	handle_int(va_list args)
 		return (-1);
 	written = ft_putstr(str);
 	free(str);
-	return (written);	
+	return (written);
 }
 
 ssize_t	handle_uint(va_list args)
@@ -67,7 +67,7 @@ ssize_t	handle_ptr(va_list args)
 
 	ptr = (unsigned long)va_arg(args, void *);
 	if (ptr == 0)
-		return (ft_putstr("0x0"));
+		return (ft_putstr("(nil)"));
 	str = ft_utoa_base(ptr, "0123456789abcdef");
 	if (!str)
 		return (-1);

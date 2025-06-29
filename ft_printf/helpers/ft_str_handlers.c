@@ -6,20 +6,20 @@
 /*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 18:03:49 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/29 18:06:11 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/29 23:57:46 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
-size_t ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
-    const char *start;
+	const char	*start;
 
 	start = s;
-    while (*s)
-        s++;
-    return (s - start);
+	while (*s)
+		s++;
+	return (s - start);
 }
 
 ssize_t	handle_percent(void)

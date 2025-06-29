@@ -6,7 +6,7 @@
 /*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 23:58:51 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/29 18:07:48 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/30 00:36:19 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,15 +84,16 @@ static ssize_t	handle_formatters(va_list args, int type)
 
 int	ft_printf(const char *fmt, ...)
 {
-	int		count;
-	ssize_t	written;
-
 	va_list args;
+	ssize_t	written;
+	int		count;
+
+	count = 0;
 	va_start(args, fmt);
 	while (*fmt)
 	{
 		if (*fmt == '%')
-			written = handle_formatters(args, *++fmt);
+			written = handle_formatters(args, *(fmt + 1));
 		else
 			written = write(1, fmt, 1);
 		if (written == -1)
@@ -101,7 +102,10 @@ int	ft_printf(const char *fmt, ...)
 			return (-1);
 		}
 		count += (int)written;
-		fmt++;
+		if (*fmt == '%')
+			fmt += 2;
+		else
+			fmt++;
 	}
 	va_end(args);
 	return (count);

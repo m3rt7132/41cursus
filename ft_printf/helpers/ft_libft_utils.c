@@ -6,21 +6,17 @@
 /*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 18:04:39 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/29 18:06:34 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/30 00:23:10 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
-ssize_t ft_putstr(const char *s)
+ssize_t	ft_putstr(const char *s)
 {
-	const char	*out;
-
 	if (!s)
-		out = "(null)";
-	else
-		out = s;
-    return (write(1, out, ft_strlen(out)));
+		return (write(1, "(null)", 6));
+	return (write(1, s, ft_strlen(s)));
 }
 
 static int	countdigit(long n)
@@ -90,10 +86,12 @@ char	*ft_strdup(const char *s)
 
 char	*ft_utoa_base(unsigned long num, const char *base)
 {
-	char	buffer[21]; // max 64-bit hex + null
-	int		base_len = ft_strlen(base);
-	int		i = 20;
+	char	buffer[21];
+	int		base_len;
+	int		i;
 
+	i = 20;
+	base_len = ft_strlen(base);
 	buffer[i--] = 0;
 	if (num == 0)
 		buffer[i--] = '0';

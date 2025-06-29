@@ -6,20 +6,20 @@
 /*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 17:25:29 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/29 18:09:15 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/29 23:57:30 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdarg.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <stdarg.h>
 
 /* ft_printf.c */
-int	ft_printf(const char *fmt, ...);
-ssize_t	handle_formatters(va_list args, int type);
+int		ft_printf(const char *fmt, ...);
+// ssize_t	handle_formatters(va_list args, int type);
 
 /* helpers/ft_str_handlers.c */
 size_t	ft_strlen(const char *s);
