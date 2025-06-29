@@ -1,5 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/28 23:58:51 by mecetink          #+#    #+#             */
+/*   Updated: 2025/06/29 18:07:48 by mecetink         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
-#include <stdio.h>
 
 /**
  * 
@@ -50,6 +61,26 @@ typedef struct
 } va_list[1]; // va_list'in kendisi genellikle bir dizi (array of 1 element) olarak tanımlanır,
               // bu da onu bir pointer gibi davranmasını sağlar.
 */
+
+static ssize_t	handle_formatters(va_list args, int type)
+{
+	if (type == 'c')
+		return (handle_char(args));
+	else if (type == 's')
+		return (handle_str(args));
+	else if (type == '%')
+		return (handle_percent());
+	else if (type == 'd' || type == 'i')
+		return (handle_int(args));
+	else if (type == 'u')
+		return (handle_uint(args));
+	else if (type == 'x' || type == 'X')
+		return (handle_hex(args, type));
+	else if (type == 'p')
+		return (handle_ptr(args));
+	else
+		return (-1);
+}
 
 int	ft_printf(const char *fmt, ...)
 {

@@ -1,14 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_libft_utils.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/29 18:04:39 by mecetink          #+#    #+#             */
+/*   Updated: 2025/06/29 18:06:34 by mecetink         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
-
-size_t ft_strlen(const char *s)
-{
-    const char *start;
-
-	start = s;
-    while (*s)
-        s++;
-    return (s - start);
-}
 
 ssize_t ft_putstr(const char *s)
 {

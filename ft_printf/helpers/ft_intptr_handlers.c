@@ -1,42 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_intptr_handlers.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/29 18:04:07 by mecetink          #+#    #+#             */
+/*   Updated: 2025/06/29 18:05:56 by mecetink         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
-
-ssize_t	handle_formatters(va_list args, int type)
-{
-	if (type == 'c')
-		return (handle_char(args));
-	else if (type == 's')
-		return (handle_str(args));
-	else if (type == '%')
-		return (handle_percent());
-	else if (type == 'd' || type == 'i')
-		return (handle_int(args));
-	else if (type == 'u')
-		return (handle_uint(args));
-	else if (type == 'x' || type == 'X')
-		return (handle_hex(args, type));
-	else if (type == 'p')
-		return (handle_ptr(args));
-	else
-		return (-1);
-}
-
-ssize_t	handle_percent(void)
-{
-	return (write(1, "%", 1));
-}
-
-ssize_t	handle_char(va_list args)
-{
-	int	c;
-
-	c = (char)va_arg(args, int);
-	return (write(1, &c, 1));
-}
-
-ssize_t	handle_str(va_list args)
-{
-	return (ft_putstr((char *)va_arg(args, char *)));
-}
 
 ssize_t	handle_int(va_list args)
 {

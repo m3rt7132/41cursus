@@ -1,27 +1,28 @@
-NAME = libftprintf.a
-SRCS =	ft_printf.c \
-		ft_printf_handlers.c \
-		ft_libft_utils.c
-OBJS = $(SRCS:.c=.o)
-CC = cc -Wall -Wextra -Werror
+NAME	=	libftprintf.a
+SRCS	=	ft_printf.c \
+			helpers/ft_intptr_handlers.c \
+			helpers/ft_str_handlers.c \
+			helpers/ft_libft_utils.c
+OBJS	=	$(SRCS:.c=.o)
+CC		=	cc -Wall -Wextra -Werror
 
-all: $(NAME)
+all:		$(NAME)
 
-$(NAME): $(OBJS)
+$(NAME):	$(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
-run: $(NAME) main.c
+run:		$(NAME) main.c
 	$(CC) main.c $(NAME) -o out && ./out
 
-%.o: %.c
+%.o:		%.c
 	$(CC) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)
 
-fclean: clean
+fclean:		clean
 	rm -f $(NAME)
 
-re: fclean all
+re:			fclean all
 
-.PHONY: all clean fclean re
+.PHONY:		all clean fclean re
