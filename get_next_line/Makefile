@@ -1,11 +1,18 @@
 NAME	=	getnextline.a
 CC		=	cc -Wall -Wextra -Werror
-SRCS	=	get_next_line.c get_next_line_utils.c
+SRCS	=	get_next_line.c			get_next_line_utils.c
+BSRCS	=	get_next_line_bonus.c	get_next_line_utils_bonus.c
 OBJS	=	$(SRCS:.c=.o)
+BOBJS	=	$(BSRCS:.c=.o)
 AR		=	ar rcs
 BUFSIZ  =	10
 
 all:		$(NAME)
+
+bonus:		$(OBJS) $(BOBJS)
+	@if ! ar t $(NAME) 2>/dev/null | grep -q 'lst'; then \
+		ar rcs $(NAME) $(OBJS) $(BOBJS); \
+	fi
 
 run:		$(NAME)
 	@rm -f out
@@ -21,7 +28,7 @@ clean:
 	@rm -f $(OBJS)
 
 fclean:		clean
-	@rm -f $(NAME) out
+	@rm -f $(NAME)
 
 re: fclean all
 

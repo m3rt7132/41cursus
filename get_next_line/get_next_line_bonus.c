@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 13:37:00 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/29 20:14:02 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/29 20:41:18 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 void	*freeall(void *area1, void *area2, void *area3)
 {
@@ -89,15 +89,15 @@ char	*read_line(int fd, char *buf)
 
 char	*get_next_line(int fd)
 {
-	static char	*buf;
+	static char	*bufs[1024];
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd >= 1024)
 		return ((void *)0);
-	buf = read_line(fd, buf);
-	if (!buf)
+	bufs[fd] = read_line(fd, bufs[fd]);
+	if (!bufs[fd])
 		return ((void *)0);
-	line = extract_line(buf);
-	buf = save_rest(buf);
+	line = extract_line(bufs[fd]);
+	bufs[fd] = save_rest(bufs[fd]);
 	return (line);
 }
