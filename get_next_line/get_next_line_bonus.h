@@ -1,0 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mecetink <mecetink@student.42kocaeli.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/29 18:14:21 by mecetink          #+#    #+#             */
+/*   Updated: 2025/07/01 20:36:31 by mecetink         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
+
+# include <stddef.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
+
+char	*get_next_line(int fd);
+size_t	ft_strlen(const char *s);
+char	*ft_strjoin(char *s1, const char *s2);
+char	*ft_substr(const char *s, unsigned int start, size_t len);
+char	*ft_strdup(const char *s);
+char	*ft_strchr(const char *s, int c);
+void	*freeall(void *area1, void *area2, void *area3);
+
+#endif
