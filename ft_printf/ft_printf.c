@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
+/*   By: mecetink <mecetink@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 23:58:51 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/30 00:36:19 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/07/02 12:00:38 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,19 @@ typedef struct
               // bu da onu bir pointer gibi davranmasını sağlar.
 */
 
+static char	*ft_strchr(const char *s, int c)
+{
+	while (1)
+	{
+		if (*s == (char)c)
+			return ((char *)s);
+		if (*s == 0)
+			break ;
+		s++;
+	}
+	return (0);
+}
+
 static ssize_t	handle_formatters(va_list args, int type)
 {
 	if (type == 'c')
@@ -79,7 +92,27 @@ static ssize_t	handle_formatters(va_list args, int type)
 	else if (type == 'p')
 		return (handle_ptr(args));
 	else
+	{
+		write(1, "%", 1);
+		write(1, &type, 1);
+		return (2);
+	}
+}
+
+static ssize_t handle_error(const char *fmt, ssize_t written, int *count, va_list args)
+{
+	if (!fmt)
+	{
+		*count = -1;
 		return (-1);
+	}
+	if (written == -1)
+	{
+		if (args)
+			va_end(args);
+		return (-1);
+	}
+	return (0);
 }
 
 int	ft_printf(const char *fmt, ...)
@@ -89,18 +122,17 @@ int	ft_printf(const char *fmt, ...)
 	int		count;
 
 	count = 0;
+	written = 0;
+	handle_error(fmt, written, &count, NULL);
 	va_start(args, fmt);
-	while (*fmt)
+	while (fmt && *fmt)
 	{
 		if (*fmt == '%')
 			written = handle_formatters(args, *(fmt + 1));
 		else
 			written = write(1, fmt, 1);
-		if (written == -1)
-		{
-			va_end(args);
+		if (handle_error(fmt, written, &count, args) == -1)
 			return (-1);
-		}
 		count += (int)written;
 		if (*fmt == '%')
 			fmt += 2;

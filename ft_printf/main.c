@@ -3,8 +3,10 @@
 
 int main(void)
 {
-	int a = ft_printf("mert %s", "bir");
-	printf("\n%d\n", a);
-	// printf(" NULL %s NULL\n", NULL);
-	// printf(" %p %p ", 0, 0);
+	// int a = 12345;
+	// int mr = ft_printf("%s", &a);
+	// int or = printf("%s", &a);
+
+	printf("%zu", sizeof(long long));
+	// ft_printf("orj: %d\n", or);
 }

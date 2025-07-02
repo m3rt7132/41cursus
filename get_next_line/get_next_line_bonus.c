@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
+/*   By: mecetink <mecetink@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 13:37:00 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/29 20:41:18 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/07/01 20:36:38 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
+#include <stdlib.h>
+#include <unistd.h>
 
 void	*freeall(void *area1, void *area2, void *area3)
 {
@@ -22,8 +24,6 @@ void	*freeall(void *area1, void *area2, void *area3)
 		free(area3);
 	return ((void *)0);
 }
-// Bu fonksiyon, satırın geri kalanını (bir sonraki çağrı için) saklar.
-// Önceki buffer'ı serbest bırakır ve kalanı içeren yeni bir string döndürür.
 
 char	*save_rest(char *buf)
 {
@@ -31,15 +31,14 @@ char	*save_rest(char *buf)
 	char	*rest;
 
 	i = 0;
-	while (buf[i] && buf[i] != '\n')
-		i++;
 	if (!buf[i])
 		return (freeall(buf, NULL, NULL));
+	while (buf[i] && buf[i] != '\n')
+		i++;
 	rest = ft_strdup(buf + i + (buf[i] == '\n'));
 	freeall(buf, NULL, NULL);
 	return (rest);
 }
-// Bu fonksiyon, buffer'dan geçerli satırı ('\n' dahil) çıkarır.
 
 char	*extract_line(char *buf)
 {
@@ -55,9 +54,6 @@ char	*extract_line(char *buf)
 	line = ft_substr(buf, 0, i);
 	return (line);
 }
-
-// Bu fonksiyon, fd'den '\n' bulana kadar veya dosya sonuna kadar okur.
-// Hata durumunda (read < 0) buffer'ı temizler ve NULL döndürür.
 
 char	*read_line(int fd, char *buf)
 {

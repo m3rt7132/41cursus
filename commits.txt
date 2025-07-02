@@ -1,0 +1,53 @@
+[33mcommit 73d56ad1c61a8dfe928c1020a60a14f284a4b132[m[33m ([m[1;36mHEAD -> [m[1;32mmyversion[m[33m, [m[1;31morigin/myversion[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: m3rt7132 <m3rt7132@gmail.com>
+Date:   Mon Jun 30 00:38:06 2025 +0300
+
+    printf paco fix
+
+[33mcommit 5af929aa422fe48a37e20867ccd0550981a3157e[m
+Author: m3rt7132 <m3rt7132@gmail.com>
+Date:   Sun Jun 29 20:47:54 2025 +0300
+
+    printf n getnextline
+
+[33mcommit 1a6234ad9f1b5adadb32fd55002ac3c4452049aa[m
+Author: m3rt7132 <m3rt7132@gmail.com>
+Date:   Sun Jun 29 20:47:26 2025 +0300
+
+    getnextline with bonus done
+
+[33mcommit 319b87c643248f5cb27a41ed34badb36b531f7d9[m
+Author: m3rt7132 <m3rt7132@gmail.com>
+Date:   Sat Jun 28 23:58:13 2025 +0300
+
+    fix
+
+[33mcommit d87b09e4ff582e370a2817767a6ed517b4d7ea70[m
+Author: m3rt7132 <m3rt7132@gmail.com>
+Date:   Sat Jun 28 18:20:06 2025 +0300
+
+    printf done
+
+[33mcommit 04d15fdcc3f1b1d532c49f2c629efa8b81ff7072[m
+Author: m3rt7132 <m3rt7132@gmail.com>
+Date:   Sat Jun 28 00:26:55 2025 +0300
+
+    getnextline fix
+
+[33mcommit d8acf85aff4039c64cc799eab1d50b4bf93f328c[m
+Author: Mertcan Cetinkaya <mecetink@k2m12s02.42kocaeli.com.tr>
+Date:   Fri Jun 27 18:21:37 2025 +0300
+
+    .
+
+[33mcommit b083e168907cc405b88d9d3e5372231f5e2586da[m
+Author: m3rt <50045877+m3rt7132@users.noreply.github.com>
+Date:   Fri Jun 27 01:47:48 2025 +0300
+
+    getnextline
+
+[33mcommit 2db106f2c22fdf73cddf36a3e9c68e81c8ca31f3[m
+Author: Mertcan Cetinkaya <mecetink@k2m03s02.42kocaeli.com.tr>
+Date:   Mon Jun 23 12:03:32 2025 +0300
+
+    libft

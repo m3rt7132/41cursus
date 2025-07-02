@@ -2,21 +2,16 @@ NAME	=	getnextline.a
 CC		=	cc -Wall -Wextra -Werror
 SRCS	=	get_next_line.c			get_next_line_utils.c
 BSRCS	=	get_next_line_bonus.c	get_next_line_utils_bonus.c
-OBJS	=	$(SRCS:.c=.o)
-BOBJS	=	$(BSRCS:.c=.o)
 AR		=	ar rcs
 BUFSIZ  =	10
 
 all:		$(NAME)
 
-bonus:		$(OBJS) $(BOBJS)
-	@if ! ar t $(NAME) 2>/dev/null | grep -q 'lst'; then \
-		ar rcs $(NAME) $(OBJS) $(BOBJS); \
-	fi
+mand: $(SRCS)
+	$(CC) $(SRCS) -D BUFFER_SIZE=$(BUFSIZ) -o out && ./out
 
-run:		$(NAME)
-	@rm -f out
-	$(CC) main.c getnextline.a -D BUFFER_SIZE=$(BUFSIZ) -o out && ./out
+bns: $(BSRCS)
+	$(CC) $(BSRCS) -D BUFFER_SIZE=$(BUFSIZ) -o out && ./out
 
 $(NAME):	$(OBJS)
 	$(AR) $(NAME) $(OBJS)
@@ -25,7 +20,7 @@ $(NAME):	$(OBJS)
 	$(CC) -c $< -o $@
 
 clean:
-	@rm -f $(OBJS)
+	@rm -f $(OBJS) $(BOBJS) out
 
 fclean:		clean
 	@rm -f $(NAME)

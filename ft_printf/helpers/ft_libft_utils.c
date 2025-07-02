@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_libft_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
+/*   By: mecetink <mecetink@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 18:04:39 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/30 00:23:10 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/06/30 17:42:46 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
+#include <stdlib.h>
 
 ssize_t	ft_putstr(const char *s)
 {
@@ -73,7 +74,7 @@ char	*ft_strdup(const char *s)
 		len++;
 	dup = (char *) malloc(sizeof(char) * (len + 1));
 	if (dup == NULL)
-		return (NULL);
+		return ((void *)0);
 	i = 0;
 	while (i < len)
 	{

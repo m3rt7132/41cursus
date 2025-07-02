@@ -4,7 +4,7 @@ SRCS	=	ft_printf.c \
 			helpers/ft_str_handlers.c \
 			helpers/ft_libft_utils.c
 OBJS	=	$(SRCS:.c=.o)
-CC		=	cc -Wall -Wextra -Werror
+CC		=	cc
 
 all:		$(NAME)
 

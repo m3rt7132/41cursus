@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_intptr_handlers.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mecetink <mecetink@42student.kocaeli.co    +#+  +:+       +#+        */
+/*   By: mecetink <mecetink@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 18:04:07 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/30 00:06:36 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/07/01 17:30:26 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
+#include <stdlib.h>
 
 ssize_t	handle_int(va_list args)
 {
