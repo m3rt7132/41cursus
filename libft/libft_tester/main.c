@@ -4,6 +4,7 @@ int	main(void)
 {
 	test_ft_atoi();
 	test_ft_bzero();
+	test_ft_calloc();
 	test_ft_isalnum();
 	test_ft_isalpha();
 	test_ft_isascii();

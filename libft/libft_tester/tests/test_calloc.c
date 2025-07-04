@@ -1,6 +1,7 @@
 #include "tester.h"
 
-void test_ft_calloc(void) {
+void test_ft_calloc(void)
+{
     log_start("ft_calloc");
 
 	struct {

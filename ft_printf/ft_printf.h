@@ -6,7 +6,7 @@
 /*   By: mecetink <mecetink@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 17:25:29 by mecetink          #+#    #+#             */
-/*   Updated: 2025/07/01 17:32:35 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/07/04 17:49:34 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ ssize_t	handle_ptr(va_list args);
 
 char	*ft_itoa(int n);
 ssize_t	ft_putstr(const char *s);
-char	*ft_itoa(int n);
 char	*ft_strdup(const char *s);
 char	*ft_utoa_base(unsigned long num, const char *base);
 

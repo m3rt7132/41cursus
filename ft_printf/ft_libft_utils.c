@@ -6,11 +6,11 @@
 /*   By: mecetink <mecetink@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 18:04:39 by mecetink          #+#    #+#             */
-/*   Updated: 2025/06/30 17:42:46 by mecetink         ###   ########.fr       */
+/*   Updated: 2025/07/02 17:22:07 by mecetink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "ft_printf.h"
 #include <stdlib.h>
 
 ssize_t	ft_putstr(const char *s)
